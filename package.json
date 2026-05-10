@@ -1,0 +1,15 @@
+{
+  "name": "numbrelos",
+  "version": "0.1.0",
+  "description": "NumbrelOs starter platform with YAML app management and network control demo.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "js-yaml": "^4.1.0"
+  }
+}
