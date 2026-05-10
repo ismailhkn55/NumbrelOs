@@ -4,9 +4,15 @@ async function fetchSampleConfig() {
     if (!response.ok) throw new Error('Örnek yapılandırma yüklenemedi.');
     const text = await response.text();
     document.getElementById('yaml-editor').value = text;
+    const statusDiv = document.getElementById('yaml-status');
+    statusDiv.textContent = 'Örnek yapılandırma başarıyla yüklendi.';
+    statusDiv.className = 'alert alert-success';
+    console.log('Sample config loaded successfully');
   } catch (error) {
-    document.getElementById('yaml-status').textContent = error.message;
-    document.getElementById('yaml-status').classList.add('alert-error');
+    console.error('Error loading sample config:', error);
+    const statusDiv = document.getElementById('yaml-status');
+    statusDiv.textContent = 'Hata: ' + error.message;
+    statusDiv.className = 'alert alert-error';
   }
 }
 
@@ -18,6 +24,13 @@ async function parseYamlConfig() {
   status.className = 'alert';
   resultBox.textContent = '';
 
+  if (!yamlText || yamlText.trim().length === 0) {
+    status.textContent = 'Hata: YAML boş olamaz!';
+    status.className = 'alert alert-error';
+    console.warn('YAML content is empty');
+    return;
+  }
+
   try {
     const response = await fetch('/api/parse-yaml', {
       method: 'POST',
@@ -27,15 +40,18 @@ async function parseYamlConfig() {
 
     const data = await response.json();
     if (!response.ok || !data.success) {
-      throw new Error(data.error || 'YAML çözümlenemedi.');
+      const errorMsg = data.error || 'YAML çözümlenemedi.';
+      throw new Error(errorMsg);
     }
 
     status.textContent = 'YAML başarıyla çözümlandı.';
-    status.classList.add('alert-success');
+    status.className = 'alert alert-success';
     resultBox.textContent = JSON.stringify(data.data, null, 2);
+    console.log('YAML parsed successfully:', data.data);
   } catch (error) {
-    status.textContent = error.message;
-    status.classList.add('alert-error');
+    console.error('YAML parse error:', error);
+    status.textContent = 'Hata: ' + error.message;
+    status.className = 'alert alert-error';
   }
 }
 
