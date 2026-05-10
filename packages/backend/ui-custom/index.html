@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NumbrelOs Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="header">
+      <div class="header-content">
+        <h1>🏠 NumbrelOs</h1>
+        <p>Home Server Dashboard</p>
+      </div>
+      <div class="status" id="status">Bağlanıyor...</div>
+    </header>
+
+    <main class="container">
+      <!-- System Stats -->
+      <section class="section">
+        <h2>📊 Sistem Metrikleri</h2>
+        <div class="stats-grid" id="stats-grid">
+          <div class="stat-card">
+            <label>CPU</label>
+            <div class="stat-value" id="cpu-usage">--</div>
+            <div class="stat-bar">
+              <div class="stat-bar-fill" id="cpu-bar"></div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <label>RAM</label>
+            <div class="stat-value" id="mem-usage">--</div>
+            <div class="stat-bar">
+              <div class="stat-bar-fill" id="mem-bar"></div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <label>OS</label>
+            <div class="stat-value" id="os-info">--</div>
+          </div>
+          <div class="stat-card">
+            <label>Uptime</label>
+            <div class="stat-value" id="uptime-info">--</div>
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="fetchStats()">🔄 Yenile</button>
+      </section>
+
+      <!-- Docker Containers -->
+      <section class="section">
+        <h2>🐳 Docker Konteynerler</h2>
+        <div class="controls">
+          <button class="btn btn-secondary" onclick="fetchContainers()">🔄 Listeyi Yenile</button>
+        </div>
+        <div id="containers-list" class="containers-list">
+          <p class="loading">Konteynerler yükleniyor...</p>
+        </div>
+      </section>
+
+      <!-- Docker Images -->
+      <section class="section">
+        <h2>📦 Docker İmaları</h2>
+        <div id="images-list" class="images-list">
+          <p class="loading">İmalar yükleniyor...</p>
+        </div>
+        <button class="btn btn-secondary" onclick="fetchImages()">🔄 Yenile</button>
+      </section>
+
+      <!-- Error Messages -->
+      <div id="error-message" class="error-message" style="display: none;"></div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

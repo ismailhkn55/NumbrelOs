@@ -1,0 +1,49 @@
+import {useState} from 'react'
+import {useTranslation} from 'react-i18next'
+import {RiRestartLine} from 'react-icons/ri'
+
+import {
+	AlertDialog,
+	AlertDialogAction,
+	AlertDialogCancel,
+	AlertDialogContent,
+	AlertDialogFooter,
+	AlertDialogHeader,
+	AlertDialogTitle,
+} from '@/components/ui/alert-dialog'
+import {useGlobalSystemState} from '@/providers/global-system-state/index'
+import {useDialogOpenProps} from '@/utils/dialog'
+
+export default function RestartDialog() {
+	const {t} = useTranslation()
+	const dialogProps = useDialogOpenProps('restart')
+
+	const {restart} = useGlobalSystemState()
+	const [triggered, setTriggered] = useState(false)
+
+	return (
+		<AlertDialog {...dialogProps}>
+			<AlertDialogContent>
+				<AlertDialogHeader icon={RiRestartLine}>
+					<AlertDialogTitle>{t('restart.confirm.title')}</AlertDialogTitle>
+				</AlertDialogHeader>
+				<AlertDialogFooter>
+					<AlertDialogAction
+						variant='destructive'
+						className='px-6'
+						onClick={(e) => {
+							// Prevent closing by default
+							e.preventDefault()
+							setTriggered(true)
+							restart()
+						}}
+						disabled={triggered}
+					>
+						{t('restart.confirm.submit')}
+					</AlertDialogAction>
+					<AlertDialogCancel>{t('cancel')}</AlertDialogCancel>
+				</AlertDialogFooter>
+			</AlertDialogContent>
+		</AlertDialog>
+	)
+}

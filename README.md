@@ -1,126 +1,73 @@
+[![umbrelOS](https://github.com/user-attachments/assets/cabf8af7-51ce-45df-ad3a-a664cc91c610)](https://umbrel.com/umbrelos)
+
 <p align="center">
-  <a href="https://github.com/ismailhkn55/NumbrelOs">
-    <img src="assets/umbrel-logo.png" alt="NumbrelOs Logo" width="120" />
-  </a>
-  <h1 align="center">NumbrelOs</h1>
+  <h1 align="center">umbrelOS</h1>
   <p align="center">
-    NumbrelOs, Umbrel’in sade ana sayfa stilini Numbrel olarak sunan, CasaOS YAML kurulumunu ve ZimaOS ağ kontrolünü birleştiren ev sunucusu prototipidir.
+    A beautiful home server OS for self-hosting
+    <br />
+    <a href="https://umbrel.com"><strong>umbrel.com »</strong></a>
     <br />
     <br />
-    Ubuntu Server, Docker ve Node.js üzerinde çalışacak şekilde tasarlanmıştır.
+       Get an <a href="https://umbrel.com/umbrel-pro">Umbrel Pro</a> or <a href="https://umbrel.com/umbrel-home">Umbrel Home</a> for the full experience, or install umbrelOS on a <a href="https://github.com/getumbrel/umbrel/wiki/Install-umbrelOS-on-a-Raspberry-Pi-5">Raspberry Pi 5</a> or <a href="https://github.com/getumbrel/umbrel/wiki/Install-umbrelOS-on-x86-systems">any x86 system</a> for free.
     <br />
     <br />
-    <a href="https://github.com/ismailhkn55/NumbrelOs"><strong>github.com/ismailhkn55/NumbrelOs »</strong></a>
+    <a href="https://x.com/umbrel">
+      <img src="https://img.shields.io/twitter/follow/umbrel?style=social" />
+    </a>
+    <a href="https://discord.gg/efNtFzqtdx">
+      <img src="https://img.shields.io/discord/936694604231766046?logo=discord&logoColor=5351FB&label=Discord&labelColor=white&color=5351FB&cacheSeconds=60">
+    </a>
+    <a href="https://reddit.com/r/getumbrel">
+      <img src="https://img.shields.io/reddit/subreddit-subscribers/getumbrel?style=social">
+    </a>
+    <a href="https://community.umbrel.com">
+      <img src="https://img.shields.io/discourse/users?server=https%3A%2F%2Fcommunity.umbrel.com&style=flat&label=Community%20Forum&color=5351FB&cacheSeconds=60">
+    </a>
   </p>
 </p>
 
 <br />
-<br />
 
 <p align="center">
-NumbrelOs kullanıcıların verilerini kendilerinin kontrol edebildiği, Umbrel tarzı bir dashboard ile CasaOS/YAML ve ZimaOS ağ yönetimini bir arada sunmayı amaçlar.</p>
+At Umbrel, we believe that everyone should be able to enjoy the convenience and benefits of the cloud, without giving up ownership and control of their data.
+</p>
 
 <p align="center">
-<img src="assets/umbrel-hero.jpg" alt="NumbrelOs Hero" width="100%" />
+To achieve our vision, we're building a new kind of a home server OS. Instead of paying ransoms for storing your data on someone else's computer while they auction it off to advertisers — you can now easily spin up a server and self-host your data and services at home.
+</p>
+
+<p align="center">
+Just like the cloud, but one that you own and control.
 </p>
 
 <br />
 
-## Installing NumbrelOs
-> NumbrelOs hâlâ bir prototiptir ve üretim öncesi güvenlik kontrolleri gerektirir. Daha fazla bilgi için `SECURITY.md` dosyasına bakın.
+## Installing umbrelOS
 
-Bu depoyu çalıştırmak için en kolay yol:
+umbrelOS is designed for the [Umbrel Pro](https://umbrel.com/umbrel-pro) and [Umbrel Home](https://umbrel.com/umbrel-home), where it includes first-class support for all features. On other devices (like Raspberry Pi or x86 systems), it’s freely available with core functionality, but support and feature availability are best-effort due to hardware differences.
 
-```bash
-cd /workspaces/NumbrelOs
-npm install
-npm start
-```
+For a detailed feature breakdown, see our [comparison guide](https://github.com/getumbrel/umbrel/wiki/umbrelOS-on-Umbrel-Home-vs.-DIY).
 
-Sonra tarayıcıda `http://localhost:3000` adresini açın.
+### Installation guides
+- [Install umbrelOS on a Raspberry Pi 5](https://github.com/getumbrel/umbrel/wiki/Install-umbrelOS-on-a-Raspberry-Pi-5)
+- [Install umbrelOS on any x86 system](https://github.com/getumbrel/umbrel/wiki/Install-umbrelOS-on-x86-Systems)
+- [Install umbrelOS in a VM](https://github.com/getumbrel/umbrel/wiki/Install-umbrelOS-on-a-Linux-VM)
 
-Alternatif olarak Docker ile:
+[![umbrelOS use cases](https://github.com/user-attachments/assets/284feee7-15a1-48f2-a694-c968f1cc702f)](https://umbrel.com/umbrelos)
+[![Umbrel App Store](https://github.com/user-attachments/assets/3d7846c7-d896-48f5-8a30-3578554702fa)](https://apps.umbrel.com)
+[![Files on umbrelOS](https://github.com/user-attachments/assets/6c501256-47a0-4ce1-89ad-4ba02f4c9f2d)](https://umbrel.com/umbrelos)
+[![umbrelOS Features](https://github.com/user-attachments/assets/6828da74-2b64-4b56-a7b7-5db603d023c8)](https://umbrel.com/umbrelos)
+[![Backups in umbrelOS](https://github.com/user-attachments/assets/39778824-ed18-4f6f-a865-1d77bbfce833)](https://umbrel.com/umbrelos)
+[![External Storage & NAS in umbrelOS](https://github.com/user-attachments/assets/4841c2dc-4ba4-4d47-bf0a-0e342bf60166)](https://umbrel.com/umbrelos)
 
-```bash
-docker compose up --build
-```
+## Building apps for umbrelOS
 
-<p align="center">
-<img src="assets/umbrel-install.png" alt="NumbrelOs Installation" width="80%" />
-</p>
-
-## Numbrel App Store
-
-NumbrelOs, Umbrel tarzı bir uygulama mağazası deneyimi için bir başlangıç sunar. Aşağıdaki kategoriler ve uygulamalar konsept olarak desteklenebilir:
-
-#### Bitcoin & Finans
-- Bitcoin Node — Kendi Bitcoin düğümünü çalıştır
-- Electrs — Basit bir Electrum sunucusu
-- Mempool — Bitcoin topluluğu için explorer
-- BTCPay Server — Ücretsiz Bitcoin ödemeleri kabul et
-- Lightning Node — Kendi Lightning ağ düğümünü çalıştır
-
-#### Dosya & Üretkenlik
-- Nextcloud — Kontrol sizde olan bir üretkenlik platformu
-- PhotoPrism — Fotoğraf ve video kütüphanesi yönetimi
-- SyncThing — Cihazlar arası eşitleme
-- Vaultwarden — Bitwarden uyumlu güvenli parola yönetimi
-
-#### Medya
-- Jellyfin — Ücretsiz medya sistemi
-- Radarr — Film koleksiyonu yöneticisi
-- Sonarr — TV serisi yöneticisi
-- Plex — Medya yayın konsepti
-
-#### Ağ
-- Pi-hole — Ağ düzeyinde reklam engelleme
-- Tailscale — Uzak erişim için VPN çözümü
-- Uptime Kuma — Çevrimdışı izleme
-- Transmission — Torrent istemcisi
-
-#### Sosyal
-- Element — Matrix istemcisi
-- Invidious — İzleme reklamlarını engelleyen YouTube arayüzü
-- LibReddit — Özel Reddit ön yüzü
-- Nitter — Twitter için reklam ve izleme olmadan arayüz
-
-#### Otomasyon
-- Home Assistant — Yerel otomasyon platformu
-- n8n — Akış ve otomasyon düzenleme
-- Node-RED — IoT ve servis entegrasyonu
-
-#### Geliştirici Araçları
-- Code Server — Tarayıcıda VS Code deneyimi
-- Gitea — Basit self-hosted Git servisi
-
-<p align="center">
-<img src="assets/umbrel-apps.png" alt="NumbrelOs Apps" width="60%" />
-</p>
-
-> Bu liste tamamen konsept içindir. Gerçek uygulama desteği için backend ve Docker yapılandırmaları eklenmelidir.
-
-<p align="center">
-<img src="assets/umbrel-dashboard.png" alt="NumbrelOs Dashboard" width="100%" />
-</p>
-
-## Building apps for NumbrelOs
-
-Bir uygulama geliştirmek veya mevcut bir servisi paketlemek için `config/sample.yml` içindeki örneği kullanabilir ve `app.js`/`server.js` üzerinde destek ekleyebilirsiniz.
-
-## Contributing
-
-NumbrelOs için katkılarınızı bekliyoruz. Özellikle aşağıdaki konularda yardım edin:
-
-- Umbrel benzeri dashboard tasarımı
-- CasaOS YAML desteğini geliştirme
-- ZimaOS ağ kontrol panelini genişletme
-- Ubuntu Server / Docker dağıtım akışını iyileştirme
-- güvenlik ve kimlik doğrulama ekleme
-
-## Security
-
-Bu proje bir prototiptir. Güvenlik açıkları olabilir. Üretim için kullanmadan önce lütfen `SECURITY.md` dosyasını inceleyin.
+If you're interested in building an app for umbrelOS or packaging an existing one, please refer to the [Umbrel App Framework documentation](https://github.com/getumbrel/umbrel-apps/blob/master/README.md).
 
 ## License
 
-Bu depo, NumbrelOs prototipi olarak sunulur. Kendi projeleriniz için kaynak olarak kullanabilirsiniz.
+umbrelOS is licensed under the PolyForm Noncommercial 1.0.0 license. TL;DR — You're free to use, fork, modify, and redistribute Umbrel for personal and nonprofit use under the same license. If you're interested in using umbrelOS for commercial purposes, such as selling plug-and-play home servers with umbrelOS, etc — please reach out to us at partner@umbrel.com.
+
+[![License](https://img.shields.io/badge/license-PolyForm%20Noncommercial%201.0.0-%235351FB)](https://github.com/getumbrel/umbrel/blob/master/LICENSE.md)
+
+[umbrel.com](https://umbrel.com)
